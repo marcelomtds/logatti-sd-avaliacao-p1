@@ -35,4 +35,30 @@ public class AutomovelPersistenceImpl extends UnicastRemoteObject implements Aut
             e.printStackTrace();
         }
     }
+
+    public Automovel findById(Long id) {
+        Automovel automovel = null;
+        try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            String sql = "SELECT id, placa, numero_portas, tipo_combustivel, quilometragem, cor, ano, chassi, valor_diaria, id_modelo " +
+                    "FROM automovel WHERE id = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                automovel = new Automovel();
+                automovel.setId(rs.getLong("id"));
+                automovel.setPlaca(rs.getString("placa"));
+                automovel.setNumeroPortas(rs.getInt("numero_portas"));
+                automovel.setTipoCombustivel(rs.getString("tipo_combustivel"));
+                automovel.setQuilometragem(rs.getInt("quilometragem"));
+                automovel.setCor(rs.getString("cor"));
+                automovel.setAno(rs.getInt("ano"));
+                automovel.setChassi(rs.getString("chassi"));
+                automovel.setValorDiaria(rs.getBigDecimal("valor_diaria"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return automovel;
+    }
 }

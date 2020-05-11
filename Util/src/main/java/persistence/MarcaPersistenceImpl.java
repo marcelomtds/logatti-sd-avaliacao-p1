@@ -27,18 +27,22 @@ public class MarcaPersistenceImpl extends UnicastRemoteObject implements MarcaPe
         }
     }
 
-    public Boolean verifyById(Long id) {
+    public Marca findById(Long id) {
+        Marca marca = null;
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
-            String sql = "SELECT id FROM marca WHERE id = ?;";
+            String sql = "SELECT id, descricao " +
+                    "FROM marca WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
-            if (!rs.next()) {
-                return false;
+            while (rs.next()) {
+                marca = new Marca();
+                marca.setId(rs.getLong("id"));
+                marca.setDescricao(rs.getString("descricao"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+        return marca;
     }
 }

@@ -9,4 +9,6 @@ public interface ClientePersistence extends Remote {
 
     void create(Cliente cliente) throws RemoteException;
 
+    Cliente findById(Long id) throws RemoteException;
+
 }

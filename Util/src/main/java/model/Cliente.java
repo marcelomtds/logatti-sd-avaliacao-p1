@@ -1,7 +1,7 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Cliente implements Serializable {
 
@@ -10,7 +10,7 @@ public class Cliente implements Serializable {
     private Long id;
     private String cpf;
     private String nome;
-    private LocalDate dataNascimento;
+    private Date dataNascimento;
     private String telefone;
     private String email;
     private String EnderecoLogradouro;
@@ -45,11 +45,11 @@ public class Cliente implements Serializable {
         this.nome = nome;
     }
 
-    public LocalDate getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

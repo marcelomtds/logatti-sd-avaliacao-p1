@@ -9,6 +9,6 @@ public interface ModeloPersistence extends Remote {
 
     void create(Modelo modelo) throws RemoteException;
 
-    Boolean verifyById(Long id) throws RemoteException;
+    Modelo findById(Long id) throws RemoteException;
 
 }

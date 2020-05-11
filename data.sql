@@ -37,7 +37,7 @@ create table cliente (
 	data_nascimento date not null,
 	telefone varchar (15) not null,
 	email varchar (50) not null,
-	end_logradouro varchar (100) not null,
+	endereco_logradouro varchar (100) not null,
 	endereco_numero integer not null,
 	endereco_complemento varchar (100),
 	endereco_bairro varchar (100) not null,

@@ -28,18 +28,22 @@ public class ModeloPersistenceImpl extends UnicastRemoteObject implements Modelo
         }
     }
 
-    public Boolean verifyById(Long id) {
+    public Modelo findById(Long id) {
+        Modelo modelo = null;
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
-            String sql = "SELECT id FROM modelo WHERE id = ?;";
+            String sql = "SELECT id, descricao, id_marca " +
+                    "FROM modelo WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
-            if (!rs.next()) {
-                return false;
+            while (rs.next()) {
+                modelo = new Modelo();
+                modelo.setId(rs.getLong("id"));
+                modelo.setDescricao(rs.getString("descricao"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+        return modelo;
     }
 }

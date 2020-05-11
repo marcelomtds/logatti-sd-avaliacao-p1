@@ -1,9 +1,6 @@
 package server;
 
-import persistence.AutomovelPersistenceImpl;
-import persistence.ClientePersistenceImpl;
-import persistence.MarcaPersistenceImpl;
-import persistence.ModeloPersistenceImpl;
+import persistence.*;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -25,9 +22,9 @@ public class Server {
             System.out.println("Serviço 'Automovel' iniciado com sucesso.");
 
             Naming.rebind("rmi://localhost:8282/cliente", new ClientePersistenceImpl());
-            System.out.print("Serviço 'Cliente' iniciado com sucesso.");
+            System.out.println("Serviço 'Cliente' iniciado com sucesso.");
 
-            Naming.rebind("rmi://localhost:8282/locacao", new ClientePersistenceImpl());
+            Naming.rebind("rmi://localhost:8282/locacao", new LocacaoPersistenceImpl());
             System.out.println("Serviço 'Locacao' iniciado com sucesso.");
 
         } catch (MalformedURLException e) {

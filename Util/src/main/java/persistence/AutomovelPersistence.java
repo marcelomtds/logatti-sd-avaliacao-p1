@@ -9,4 +9,6 @@ public interface AutomovelPersistence extends Remote {
 
     void create(Automovel marca) throws RemoteException;
 
+    Automovel findById(Long id) throws RemoteException;
+
 }

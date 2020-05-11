@@ -1,66 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1010601b-9ffa-4f48-b583-23082d4774bc" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="1010601b-9ffa-4f48-b583-23082d4774bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistenceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b/storage_v2/_src_/database/logatti-sd-avaliacao-p1.0Hge-Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b/storage_v2/_src_/database/logatti-sd-avaliacao-p1.0Hge-Q/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/META-INF/Server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistenceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistenceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistenceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistenceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="logatti-sd-avaliacao-p1@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="logatti-sd-avaliacao-p1@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="logatti-sd-avaliacao-p1@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="logatti-sd-avaliacao-p1: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="logatti-sd-avaliacao-p1@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="logatti-sd-avaliacao-p1: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="logatti-sd-avaliacao-p1@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="logatti-sd-avaliacao-p1: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="logatti-sd-avaliacao-p1@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="logatti-sd-avaliacao-p1: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
-    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,14 +34,13 @@
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1beKMmUELMVYkHd0r5FY4j81Vu8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -103,22 +66,10 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.Main" />
-      <module name="Client" />
+      <module name="client" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="client.*" />
@@ -131,7 +82,7 @@
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="server.Server" />
-      <module name="Server" />
+      <module name="server" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="server.*" />
@@ -168,20 +119,69 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="380" y="0" width="619" height="728" key="#Main" timestamp="1589215823320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="380" y="0" width="619" height="728" key="#Main/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589215823320" />
+    <state x="380" y="0" width="619" height="728" key="#Server" timestamp="1589215798684">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="380" y="0" width="619" height="728" key="#Server/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589215798684" />
+    <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589215811553">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589215811553" />
+    <state width="818" height="466" key="DebuggerActiveHint" timestamp="1589223046732">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="818" height="466" key="DebuggerActiveHint/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223046732" />
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1589223480480">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480480" />
+    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1589223480479">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480479" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1589223480479">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480479" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1589223480479">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480479" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1589223480263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1589223480263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1589223480263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1589223480263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
+    <state x="479" y="190" width="408" height="343" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1589222961216">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="190" width="408" height="343" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589222961216" />
+    <state x="582" y="306" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1589220833107">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="582" y="306" key="com.intellij.database.run.ParametersPanel.Standalone/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589220833107" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistenceImpl.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistenceImpl.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="java.lang.String" fieldName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

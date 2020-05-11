@@ -9,6 +9,6 @@ public interface MarcaPersistence extends Remote {
 
     void create(Marca marca) throws RemoteException;
 
-    Boolean verifyById(Long id) throws RemoteException;
+    Marca findById(Long id) throws RemoteException;
 
 }
