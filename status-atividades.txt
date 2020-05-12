@@ -1,0 +1,24 @@
+---------- 08/05/2011 ----------
+Definição da arquitetura básica do projeto
+Definição do modelo relacional do banco de dados
+Criação dos scripts para geração das tabelas
+Criação do banco de dados
+Criação do projeto base (root)
+
+---------- 10/05/2011 ----------
+Criação e implementacao do módulo client
+Criação e implementação do módulo server
+Criação e implementação do módulo util
+
+---------- 11/05/2011 ----------
+Implementação do classe principal (Main)
+Implementação do gerenciar marca
+Implementação do gerenciar modelo
+
+---------- 13/05/2011 ----------
+Implementação do gerenciar automóvel
+Implementação do gerenciar cliente
+
+---------- 15/05/2011 ----------
+Implementação do gerenciar locação
+Revisão de código / refatoração

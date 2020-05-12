@@ -19,7 +19,6 @@ create table automovel (
 	placa varchar (10) not null,
 	numero_portas int not null,
 	tipo_combustivel varchar (20) not null,
-	quilometragem int not null,
 	cor varchar (30) not null,
 	ano integer not null,
 	chassi varchar (50) not null,
@@ -42,7 +41,7 @@ create table cliente (
 	endereco_complemento varchar (100),
 	endereco_bairro varchar (100) not null,
 	endereco_cep varchar (10) not null,
-	endereco_localidade varchar (100) not null,
+	endereco_cidade varchar (100) not null,
 	endereco_uf varchar (2) not null,
 	constraint pk_cliente primary key (id),
 	constraint uq_cliente unique (cpf)

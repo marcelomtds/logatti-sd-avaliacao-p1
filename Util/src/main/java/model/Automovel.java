@@ -11,7 +11,6 @@ public class Automovel implements Serializable {
     private String placa;
     private Integer numeroPortas;
     private String tipoCombustivel;
-    private Integer quilometragem;
     private String cor;
     private Integer ano;
     private String chassi;
@@ -48,14 +47,6 @@ public class Automovel implements Serializable {
 
     public void setTipoCombustivel(String tipoCombustivel) {
         this.tipoCombustivel = tipoCombustivel;
-    }
-
-    public Integer getQuilometragem() {
-        return quilometragem;
-    }
-
-    public void setQuilometragem(Integer quilometragem) {
-        this.quilometragem = quilometragem;
     }
 
     public String getCor() {
@@ -96,5 +87,11 @@ public class Automovel implements Serializable {
 
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d, placa: %s, número de portas: %d, tipo de combustível: %s, cor: %s, ano: %d, chassi: %s, valor da diária: %.2f",
+                id, placa, numeroPortas, tipoCombustivel, cor, ano, chassi, valorDiaria);
     }
 }

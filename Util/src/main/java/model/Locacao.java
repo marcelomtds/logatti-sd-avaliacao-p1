@@ -2,15 +2,15 @@ package model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Locacao implements Serializable {
 
     private static final long serialVersionUID = -2151938904485960398L;
 
     private Long id;
-    private LocalDate dataLocacao;
-    private LocalDate dataDevolucao;
+    private Date dataLocacao;
+    private Date dataDevolucao;
     private BigDecimal valor;
     private Automovel automovel;
     private Cliente cliente;
@@ -23,19 +23,19 @@ public class Locacao implements Serializable {
         this.id = id;
     }
 
-    public LocalDate getDataLocacao() {
+    public Date getDataLocacao() {
         return dataLocacao;
     }
 
-    public void setDataLocacao(LocalDate dataLocacao) {
+    public void setDataLocacao(Date dataLocacao) {
         this.dataLocacao = dataLocacao;
     }
 
-    public LocalDate getDataDevolucao() {
+    public Date getDataDevolucao() {
         return dataDevolucao;
     }
 
-    public void setDataDevolucao(LocalDate dataDevolucao) {
+    public void setDataDevolucao(Date dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 

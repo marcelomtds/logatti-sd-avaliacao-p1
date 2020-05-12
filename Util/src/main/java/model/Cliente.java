@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Cliente implements Serializable {
@@ -13,13 +14,13 @@ public class Cliente implements Serializable {
     private Date dataNascimento;
     private String telefone;
     private String email;
-    private String EnderecoLogradouro;
-    private Integer EnderecoNumero;
-    private String EnderecoComplemento;
-    private String EnderecoBairro;
-    private String EnderecoCep;
-    private String EnderecoLocalidade;
-    private String EnderecoUf;
+    private String enderecoLogradouro;
+    private Integer enderecoNumero;
+    private String enderecoComplemento;
+    private String enderecoBairro;
+    private String enderecoCep;
+    private String enderecoCidade;
+    private String enderecoUf;
 
     public Long getId() {
         return id;
@@ -70,58 +71,66 @@ public class Cliente implements Serializable {
     }
 
     public String getEnderecoLogradouro() {
-        return EnderecoLogradouro;
+        return enderecoLogradouro;
     }
 
     public void setEnderecoLogradouro(String enderecoLogradouro) {
-        EnderecoLogradouro = enderecoLogradouro;
+        this.enderecoLogradouro = enderecoLogradouro;
     }
 
     public Integer getEnderecoNumero() {
-        return EnderecoNumero;
+        return enderecoNumero;
     }
 
     public void setEnderecoNumero(Integer enderecoNumero) {
-        EnderecoNumero = enderecoNumero;
+        this.enderecoNumero = enderecoNumero;
     }
 
     public String getEnderecoComplemento() {
-        return EnderecoComplemento;
+        return enderecoComplemento;
     }
 
     public void setEnderecoComplemento(String enderecoComplemento) {
-        EnderecoComplemento = enderecoComplemento;
+        this.enderecoComplemento = enderecoComplemento;
     }
 
     public String getEnderecoBairro() {
-        return EnderecoBairro;
+        return enderecoBairro;
     }
 
     public void setEnderecoBairro(String enderecoBairro) {
-        EnderecoBairro = enderecoBairro;
+        this.enderecoBairro = enderecoBairro;
     }
 
     public String getEnderecoCep() {
-        return EnderecoCep;
+        return enderecoCep;
     }
 
     public void setEnderecoCep(String enderecoCep) {
-        EnderecoCep = enderecoCep;
+        this.enderecoCep = enderecoCep;
     }
 
-    public String getEnderecoLocalidade() {
-        return EnderecoLocalidade;
+    public String getEnderecoCidade() {
+        return enderecoCidade;
     }
 
-    public void setEnderecoLocalidade(String enderecoLocalidade) {
-        EnderecoLocalidade = enderecoLocalidade;
+    public void setEnderecoCidade(String enderecoCidade) {
+        this.enderecoCidade = enderecoCidade;
     }
 
     public String getEnderecoUf() {
-        return EnderecoUf;
+        return enderecoUf;
     }
 
     public void setEnderecoUf(String enderecoUf) {
-        EnderecoUf = enderecoUf;
+        this.enderecoUf = enderecoUf;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d, CPF: %s, nome: %s, data de nascimento: %s, telefone: %s, e-mail: %s " +
+                        "- Endereço = Logradouro: %s, número: %d, complemento: %s, bairro: %s, CEP: %s, cidade: %s, UF: %s",
+                id, cpf, nome, new SimpleDateFormat("dd/MM/yyyy").format(dataNascimento) , telefone, email,
+                enderecoLogradouro, enderecoNumero, enderecoComplemento, enderecoBairro, enderecoCep, enderecoCidade, enderecoUf);
     }
 }

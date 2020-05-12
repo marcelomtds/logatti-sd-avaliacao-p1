@@ -2,24 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1010601b-9ffa-4f48-b583-23082d4774bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistenceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b/storage_v2/_src_/database/logatti-sd-avaliacao-p1.0Hge-Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b/storage_v2/_src_/database/logatti-sd-avaliacao-p1.0Hge-Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/client/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/META-INF/Server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Automovel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Locacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Locacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Marca.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Marca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Modelo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistenceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistenceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistenceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistenceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistenceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,54 +129,66 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="380" y="0" width="619" height="728" key="#Server/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589215798684" />
+    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1589258262013">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589258262013" />
     <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589215811553">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589215811553" />
-    <state width="818" height="466" key="DebuggerActiveHint" timestamp="1589223046732">
+    <state width="818" height="466" key="DebuggerActiveHint" timestamp="1589245025777">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="818" height="466" key="DebuggerActiveHint/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223046732" />
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1589223480480">
+    <state width="818" height="466" key="DebuggerActiveHint/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589245025777" />
+    <state width="1323" height="281" key="GridCell.Tab.0.bottom" timestamp="1589260437723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480480" />
-    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1589223480479">
+    <state width="1323" height="281" key="GridCell.Tab.0.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
+    <state width="1323" height="281" key="GridCell.Tab.0.center" timestamp="1589260437723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480479" />
-    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1589223480479">
+    <state width="1323" height="281" key="GridCell.Tab.0.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
+    <state width="1323" height="281" key="GridCell.Tab.0.left" timestamp="1589260437723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480479" />
-    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1589223480479">
+    <state width="1323" height="281" key="GridCell.Tab.0.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
+    <state width="1323" height="281" key="GridCell.Tab.0.right" timestamp="1589260437723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480479" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1589223480263">
+    <state width="1323" height="281" key="GridCell.Tab.0.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
+    <state width="1323" height="281" key="GridCell.Tab.1.bottom" timestamp="1589260437499">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1589223480263">
+    <state width="1323" height="281" key="GridCell.Tab.1.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437499" />
+    <state width="1323" height="281" key="GridCell.Tab.1.center" timestamp="1589260437499">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1589223480263">
+    <state width="1323" height="281" key="GridCell.Tab.1.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437499" />
+    <state width="1323" height="281" key="GridCell.Tab.1.left" timestamp="1589260437498">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1589223480263">
+    <state width="1323" height="281" key="GridCell.Tab.1.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437498" />
+    <state width="1323" height="281" key="GridCell.Tab.1.right" timestamp="1589260437499">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589223480263" />
-    <state x="479" y="190" width="408" height="343" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1589222961216">
+    <state width="1323" height="281" key="GridCell.Tab.1.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437499" />
+    <state x="541" y="253" width="316" height="240" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1589240427920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="479" y="190" width="408" height="343" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589222961216" />
+    <state x="541" y="253" width="316" height="240" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589240427920" />
+    <state x="479" y="190" width="408" height="335" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1589250925751">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="190" width="408" height="335" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589250925751" />
     <state x="582" y="306" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1589220833107">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="582" y="306" key="com.intellij.database.run.ParametersPanel.Standalone/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589220833107" />
+    <state x="1526" y="0" width="847" height="522" maximized="true" key="dock-window-1" timestamp="1589243817984">
+      <screen x="1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="1526" y="0" width="847" height="522" maximized="true" key="dock-window-1/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589243817984" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
