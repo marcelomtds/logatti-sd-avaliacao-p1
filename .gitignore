@@ -1,2 +1,4 @@
-*/target/*
-.idea
+Client/target/
+Client/target/
+Server/target/
+.idea/
