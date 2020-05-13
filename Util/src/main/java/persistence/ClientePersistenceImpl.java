@@ -1,7 +1,10 @@
 package persistence;
 
 import connection.PostgreSQLConnection;
+import exception.ResourceCannotRemovedException;
+import exception.ResourceNotFoundException;
 import model.Cliente;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -11,8 +14,11 @@ import java.util.List;
 
 public class ClientePersistenceImpl extends UnicastRemoteObject implements ClientePersistence {
 
+    private LocacaoPersistenceImpl locacaoPersistenceImpl;
+
     public ClientePersistenceImpl() throws RemoteException {
         super();
+        locacaoPersistenceImpl = new LocacaoPersistenceImpl();
     }
 
     public void create(Cliente cliente) {
@@ -86,8 +92,10 @@ public class ClientePersistenceImpl extends UnicastRemoteObject implements Clien
         }
     }
 
-    public void delete(Long id) {
+    public void delete(Long id) throws ResourceNotFoundException, ResourceCannotRemovedException {
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            findById(id);
+            locacaoPersistenceImpl.checkLinkWithCliente(id);
             String sql = "DELETE FROM cliente WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
@@ -97,7 +105,7 @@ public class ClientePersistenceImpl extends UnicastRemoteObject implements Clien
         }
     }
 
-    public Cliente findById(Long id) {
+    public Cliente findById(Long id) throws ResourceNotFoundException {
         Cliente cliente = null;
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
             String sql = "SELECT " +
@@ -118,7 +126,12 @@ public class ClientePersistenceImpl extends UnicastRemoteObject implements Clien
                     "WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
-            cliente = readValues(ps.executeQuery()).get(0);
+            List<Cliente> clientes = readValues(ps.executeQuery());
+            if (ObjectUtils.isNotEmpty(clientes)) {
+                cliente = clientes.get(0);
+            } else {
+                throw new ResourceNotFoundException("O cliente informado não foi encontrado.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

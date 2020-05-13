@@ -1,5 +1,7 @@
 package client;
 
+import exception.ResourceCannotRemovedException;
+import exception.ResourceNotFoundException;
 import model.*;
 import persistence.*;
 
@@ -12,6 +14,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Client {
@@ -39,74 +42,78 @@ public class Client {
         Boolean isContinue = true;
         while (isContinue) {
             printMenu();
-            int option = getIntValue();
-            switch (option) {
-                case 1:
-                    createMarca();
-                    break;
-                case 2:
-                    updateMarca();
-                    break;
-                case 3:
-                    listAllMarcas();
-                    break;
-                case 4:
-                    deleteMarca();
-                    break;
-                case 5:
-                    createModelo();
-                    break;
-                case 6:
-                    updateModelo();
-                    break;
-                case 7:
-                    listAllModelos();
-                    break;
-                case 8:
-                    deleteModelo();
-                    break;
-                case 9:
-                    createAutomovel();
-                    break;
-                case 10:
-                    updateAutomovel();
-                    break;
-                case 11:
-                    listAllAutomoveis();
-                    break;
-                case 12:
-                    deleteAutomovel();
-                    break;
-                case 13:
-                    createCliente();
-                    break;
-                case 14:
-                    updateCliente();
-                    break;
-                case 15:
-                    listAllClientes();
-                    break;
-                case 16:
-                    deleteCliente();
-                    break;
-                case 17:
-                    createLocacao();
-                    break;
-                case 18:
-                    updateLocacao();
-                    break;
-                case 19:
-                    listAllLocacoes();
-                    break;
-                case 20:
-                    deleteLocacao();
-                    break;
-                case 21:
-                    isContinue = false;
-                    System.out.println("Aplicação finalizada com sucesso.");
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
+            try {
+                int option = getIntValue();
+                switch (option) {
+                    case 1:
+                        createMarca();
+                        break;
+                    case 2:
+                        updateMarca();
+                        break;
+                    case 3:
+                        listAllMarcas();
+                        break;
+                    case 4:
+                        deleteMarca();
+                        break;
+                    case 5:
+                        createModelo();
+                        break;
+                    case 6:
+                        updateModelo();
+                        break;
+                    case 7:
+                        listAllModelos();
+                        break;
+                    case 8:
+                        deleteModelo();
+                        break;
+                    case 9:
+                        createAutomovel();
+                        break;
+                    case 10:
+                        updateAutomovel();
+                        break;
+                    case 11:
+                        listAllAutomoveis();
+                        break;
+                    case 12:
+                        deleteAutomovel();
+                        break;
+                    case 13:
+                        createCliente();
+                        break;
+                    case 14:
+                        updateCliente();
+                        break;
+                    case 15:
+                        listAllClientes();
+                        break;
+                    case 16:
+                        deleteCliente();
+                        break;
+                    case 17:
+                        createLocacao();
+                        break;
+                    case 18:
+                        updateLocacao();
+                        break;
+                    case 19:
+                        listAllLocacoes();
+                        break;
+                    case 20:
+                        deleteLocacao();
+                        break;
+                    case 21:
+                        isContinue = false;
+                        System.out.println("Aplicação finalizada com sucesso.");
+                        break;
+                    default:
+                        System.out.println("Opção inválida.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Ocorreu um ao ler a entrada informada.");
             }
         }
     }
@@ -118,7 +125,7 @@ public class Client {
             marca.setDescricao(getStringValue());
             marcaPersistence.create(marca);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
         }
     }
 
@@ -130,7 +137,9 @@ public class Client {
             marca.setDescricao(getStringValue());
             marcaPersistence.update(marca);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -140,7 +149,7 @@ public class Client {
                 System.out.println(marca.toString());
             }
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
         }
     }
 
@@ -149,7 +158,9 @@ public class Client {
             System.out.print("Informe o ID da marca: ");
             marcaPersistence.delete(getLongValue());
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException | ResourceCannotRemovedException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -162,7 +173,9 @@ public class Client {
             modelo.setDescricao(getStringValue());
             modeloPersistence.create(modelo);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -176,7 +189,9 @@ public class Client {
             modelo.setDescricao(getStringValue());
             modeloPersistence.update(modelo);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -186,7 +201,7 @@ public class Client {
                 System.out.println(String.format("%s - Marca = %s", modelo.toString(), modelo.getMarca().toString()));
             }
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
         }
     }
 
@@ -195,7 +210,9 @@ public class Client {
             System.out.print("Informe o ID do modelo: ");
             modeloPersistence.delete(getLongValue());
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException | ResourceCannotRemovedException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -220,7 +237,9 @@ public class Client {
             automovel.setValorDiaria(getBigDecimalValue());
             automovelPersistence.create(automovel);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -246,7 +265,9 @@ public class Client {
             automovel.setValorDiaria(getBigDecimalValue());
             automovelPersistence.update(automovel);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -257,7 +278,7 @@ public class Client {
                         automovel.toString(), automovel.getModelo().toString(), automovel.getModelo().getMarca().toString()));
             }
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
         }
     }
 
@@ -266,7 +287,9 @@ public class Client {
             System.out.print("Informe o ID do automóvel: ");
             automovelPersistence.delete(getLongValue());
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException | ResourceCannotRemovedException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -298,8 +321,10 @@ public class Client {
             System.out.print("Informe a UF: ");
             cliente.setEnderecoUf(getStringValue());
             clientePersistence.create(cliente);
-        } catch (RemoteException | ParseException e) {
-            e.printStackTrace();
+        } catch (RemoteException e) {
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ParseException e) {
+            System.out.println("A data de nascimento informada é inválida.");
         }
     }
 
@@ -332,8 +357,12 @@ public class Client {
             System.out.print("Informe a UF: ");
             cliente.setEnderecoUf(getStringValue());
             clientePersistence.update(cliente);
-        } catch (RemoteException | ParseException e) {
-            e.printStackTrace();
+        } catch (RemoteException e) {
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ParseException e) {
+            System.out.println("A data de nascimento informada é inválida.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -343,7 +372,7 @@ public class Client {
                 System.out.println(cliente.toString());
             }
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
         }
     }
 
@@ -352,7 +381,9 @@ public class Client {
             System.out.print("Informe o ID do cliente: ");
             clientePersistence.delete(getLongValue());
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException | ResourceCannotRemovedException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -372,7 +403,9 @@ public class Client {
             locacao.setValor(automovel.getValorDiaria().multiply(BigDecimal.valueOf(quantidadeDiarias)));
             locacaoPersistence.create(locacao);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -393,7 +426,9 @@ public class Client {
             locacao.setValor(automovel.getValorDiaria().multiply(BigDecimal.valueOf(quantidadeDiarias)));
             locacaoPersistence.update(locacao);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -404,7 +439,7 @@ public class Client {
                         locacao.toString(), locacao.getCliente(), locacao.getAutomovel(), locacao.getAutomovel().getModelo(), locacao.getAutomovel().getModelo().getMarca()));
             }
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
         }
     }
 
@@ -413,7 +448,9 @@ public class Client {
             System.out.print("Informe o ID da locação: ");
             locacaoPersistence.delete(getLongValue());
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
+        } catch (ResourceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -478,7 +515,7 @@ public class Client {
             clientePersistence = (ClientePersistence) Naming.lookup(CLIENTE_PATH);
             locacaoPersistence = (LocacaoPersistence) Naming.lookup(LOCACAO_PATH);
         } catch (RemoteException | NotBoundException | MalformedURLException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro de comunicação com o serviço.");
         }
     }
 }

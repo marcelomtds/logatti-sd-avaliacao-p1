@@ -1,5 +1,7 @@
 package persistence;
 
+import exception.ResourceCannotRemovedException;
+import exception.ResourceNotFoundException;
 import model.Cliente;
 
 import java.rmi.Remote;
@@ -10,14 +12,12 @@ public interface ClientePersistence extends Remote {
 
     void create(Cliente cliente) throws RemoteException;
 
-    Cliente findById(Long id) throws RemoteException;
+    Cliente findById(Long id) throws RemoteException, ResourceNotFoundException;
 
     List<Cliente> listAll() throws RemoteException;
 
-    void delete(Long id) throws RemoteException;
+    void delete(Long id) throws RemoteException, ResourceNotFoundException, ResourceCannotRemovedException;
 
     void update(Cliente cliente) throws RemoteException;
-
-    ;
 
 }

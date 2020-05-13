@@ -1,9 +1,12 @@
 package persistence;
 
 import connection.PostgreSQLConnection;
+import exception.ResourceCannotRemovedException;
+import exception.ResourceNotFoundException;
 import model.Automovel;
 import model.Marca;
 import model.Modelo;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -16,8 +19,11 @@ import java.util.List;
 
 public class AutomovelPersistenceImpl extends UnicastRemoteObject implements AutomovelPersistence {
 
+    private LocacaoPersistenceImpl locacaoPersistenceImpl;
+
     public AutomovelPersistenceImpl() throws RemoteException {
         super();
+        locacaoPersistenceImpl = new LocacaoPersistenceImpl();
     }
 
     public void create(Automovel automovel) {
@@ -75,8 +81,10 @@ public class AutomovelPersistenceImpl extends UnicastRemoteObject implements Aut
         }
     }
 
-    public void delete(Long id) {
+    public void delete(Long id) throws ResourceNotFoundException, ResourceCannotRemovedException {
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            findById(id);
+            locacaoPersistenceImpl.checkLinkWithAutomovel(id);
             String sql = "DELETE FROM automovel WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
@@ -86,7 +94,7 @@ public class AutomovelPersistenceImpl extends UnicastRemoteObject implements Aut
         }
     }
 
-    public Automovel findById(Long id) {
+    public Automovel findById(Long id) throws ResourceNotFoundException {
         Automovel automovel = null;
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
             String sql = "SELECT " +
@@ -108,11 +116,31 @@ public class AutomovelPersistenceImpl extends UnicastRemoteObject implements Aut
                     "WHERE a.id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
-            automovel = readValues(ps.executeQuery()).get(0);
+            List<Automovel> automoveis = readValues(ps.executeQuery());
+            if (ObjectUtils.isNotEmpty(automoveis)) {
+                automovel = automoveis.get(0);
+            } else {
+                throw new ResourceNotFoundException("O automóvel informado não foi encontrado.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return automovel;
+    }
+
+    public void checkLinkWithModelo(Long id) throws ResourceCannotRemovedException {
+        try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            String sql = "SELECT * " +
+                    "FROM automovel " +
+                    "WHERE id_modelo = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            if (ps.executeQuery().next()) {
+                throw new ResourceCannotRemovedException("O modelo informado não pode ser removido porque está vinculado à um automóvel.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Automovel> listAll() {

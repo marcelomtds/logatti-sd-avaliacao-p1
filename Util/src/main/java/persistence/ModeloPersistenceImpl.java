@@ -1,8 +1,11 @@
 package persistence;
 
 import connection.PostgreSQLConnection;
+import exception.ResourceCannotRemovedException;
+import exception.ResourceNotFoundException;
 import model.Marca;
 import model.Modelo;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -15,8 +18,11 @@ import java.util.List;
 
 public class ModeloPersistenceImpl extends UnicastRemoteObject implements ModeloPersistence {
 
+    private AutomovelPersistenceImpl automovelPersistenceImpl;
+
     public ModeloPersistenceImpl() throws RemoteException {
         super();
+        automovelPersistenceImpl = new AutomovelPersistenceImpl();
     }
 
     public void create(Modelo modelo) {
@@ -44,8 +50,10 @@ public class ModeloPersistenceImpl extends UnicastRemoteObject implements Modelo
         }
     }
 
-    public void delete(Long id) {
+    public void delete(Long id) throws ResourceNotFoundException, ResourceCannotRemovedException, RemoteException {
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            findById(id);
+            automovelPersistenceImpl.checkLinkWithModelo(id);
             String sql = "DELETE FROM modelo WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
@@ -55,7 +63,7 @@ public class ModeloPersistenceImpl extends UnicastRemoteObject implements Modelo
         }
     }
 
-    public Modelo findById(Long id) {
+    public Modelo findById(Long id) throws ResourceNotFoundException {
         Modelo modelo = null;
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
             String sql = "SELECT mo.id, mo.descricao, ma.id, ma.descricao " +
@@ -64,11 +72,31 @@ public class ModeloPersistenceImpl extends UnicastRemoteObject implements Modelo
                     "WHERE mo.id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
-            modelo = readValues(ps.executeQuery()).get(0);
+            List<Modelo> modelos = readValues(ps.executeQuery());
+            if (ObjectUtils.isNotEmpty(modelos)) {
+                modelo = modelos.get(0);
+            } else {
+                throw new ResourceNotFoundException("O modelo informado não foi encontrado.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return modelo;
+    }
+
+    public void checkLinkWithMarca(Long id) throws ResourceCannotRemovedException {
+        try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            String sql = "SELECT * " +
+                    "FROM modelo " +
+                    "WHERE id_marca = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            if (ps.executeQuery().next()) {
+                throw new ResourceCannotRemovedException("A marca informada não pode ser removida porque está vinculada à um modelo.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Modelo> listAll() {

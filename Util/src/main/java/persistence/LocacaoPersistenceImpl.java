@@ -1,7 +1,10 @@
 package persistence;
 
 import connection.PostgreSQLConnection;
+import exception.ResourceCannotRemovedException;
+import exception.ResourceNotFoundException;
 import model.*;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -58,8 +61,9 @@ public class LocacaoPersistenceImpl extends UnicastRemoteObject implements Locac
         }
     }
 
-    public void delete(Long id) {
+    public void delete(Long id) throws ResourceNotFoundException {
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            findById(id);
             String sql = "DELETE FROM locacao WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
@@ -69,7 +73,37 @@ public class LocacaoPersistenceImpl extends UnicastRemoteObject implements Locac
         }
     }
 
-    public Locacao findById(Long id) {
+    public void checkLinkWithAutomovel(Long id) throws ResourceCannotRemovedException {
+        try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            String sql = "SELECT * " +
+                    "FROM locacao " +
+                    "WHERE id_automovel = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            if (ps.executeQuery().next()) {
+                throw new ResourceCannotRemovedException("O automóvel informado não pode ser removido porque está vinculado à uma locação.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void checkLinkWithCliente(Long id) throws ResourceCannotRemovedException {
+        try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            String sql = "SELECT * " +
+                    "FROM locacao " +
+                    "WHERE id_cliente = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            if (ps.executeQuery().next()) {
+                throw new ResourceCannotRemovedException("O cliente informado não pode ser removido porque está vinculado à uma locação.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Locacao findById(Long id) throws ResourceNotFoundException {
         Locacao locacao = null;
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
             String sql = "SELECT " +
@@ -110,7 +144,12 @@ public class LocacaoPersistenceImpl extends UnicastRemoteObject implements Locac
                     "WHERE l.id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
-            locacao = readValues(ps.executeQuery()).get(0);
+            List<Locacao> locacoes = readValues(ps.executeQuery());
+            if (ObjectUtils.isNotEmpty(locacoes)) {
+                locacao = locacoes.get(0);
+            } else {
+                throw new ResourceNotFoundException("A locação informada não foi encontrada.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1,7 +1,10 @@
 package persistence;
 
 import connection.PostgreSQLConnection;
+import exception.ResourceCannotRemovedException;
+import exception.ResourceNotFoundException;
 import model.Marca;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -14,8 +17,11 @@ import java.util.List;
 
 public class MarcaPersistenceImpl extends UnicastRemoteObject implements MarcaPersistence {
 
+    private ModeloPersistenceImpl modeloPersistenceImpl;
+
     public MarcaPersistenceImpl() throws RemoteException {
         super();
+        modeloPersistenceImpl = new ModeloPersistenceImpl();
     }
 
     public void create(Marca marca) {
@@ -41,8 +47,10 @@ public class MarcaPersistenceImpl extends UnicastRemoteObject implements MarcaPe
         }
     }
 
-    public void delete(Long id) {
+    public void delete(Long id) throws ResourceNotFoundException, ResourceCannotRemovedException {
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
+            findById(id);
+            modeloPersistenceImpl.checkLinkWithMarca(id);
             String sql = "DELETE FROM marca WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
@@ -52,14 +60,19 @@ public class MarcaPersistenceImpl extends UnicastRemoteObject implements MarcaPe
         }
     }
 
-    public Marca findById(Long id) {
+    public Marca findById(Long id) throws ResourceNotFoundException {
         Marca marca = null;
         try (Connection connection = PostgreSQLConnection.getConnetion()) {
             String sql = "SELECT id, descricao " +
                     "FROM marca WHERE id = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
-            marca = readValues(ps.executeQuery()).get(0);
+            List<Marca> marcas = readValues(ps.executeQuery());
+            if (ObjectUtils.isNotEmpty(marcas)) {
+                marca = marcas.get(0);
+            } else {
+                throw new ResourceNotFoundException("A marca informada não foi encontrada.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
