@@ -9,22 +9,24 @@ import java.rmi.registry.LocateRegistry;
 
 public class Server {
 
+    private static final String BASE = "rmi://localhost:8282";
+
     public Server() {
         try {
             LocateRegistry.createRegistry(8282);
-            Naming.rebind("rmi://localhost:8282/marca", new MarcaPersistenceImpl());
+            Naming.rebind(String.format("%s/marca", BASE), new MarcaPersistenceImpl());
             System.out.println("Serviço 'Marca' iniciado com sucesso.");
 
-            Naming.rebind("rmi://localhost:8282/modelo", new ModeloPersistenceImpl());
+            Naming.rebind(String.format("%s/modelo", BASE), new ModeloPersistenceImpl());
             System.out.println("Serviço 'Modelo' iniciado com sucesso.");
 
-            Naming.rebind("rmi://localhost:8282/automovel", new AutomovelPersistenceImpl());
+            Naming.rebind(String.format("%s/automovel", BASE), new AutomovelPersistenceImpl());
             System.out.println("Serviço 'Automovel' iniciado com sucesso.");
 
-            Naming.rebind("rmi://localhost:8282/cliente", new ClientePersistenceImpl());
+            Naming.rebind(String.format("%s/cliente", BASE), new ClientePersistenceImpl());
             System.out.println("Serviço 'Cliente' iniciado com sucesso.");
 
-            Naming.rebind("rmi://localhost:8282/locacao", new LocacaoPersistenceImpl());
+            Naming.rebind(String.format("%s/locacao", BASE), new LocacaoPersistenceImpl());
             System.out.println("Serviço 'Locacao' iniciado com sucesso.");
 
         } catch (MalformedURLException e) {
