@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Main {
+public class Client {
 
     private static final String MARCA_PATH = "rmi://localhost:8282/marca";
     private static final String MODELO_PATH = "rmi://localhost:8282/modelo";
