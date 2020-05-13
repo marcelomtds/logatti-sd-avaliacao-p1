@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Locacao implements Serializable {
@@ -61,5 +62,11 @@ public class Locacao implements Serializable {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d, data de locação: %s, data de devolução: %s, valor da locação: %.2f",
+                id, new SimpleDateFormat("dd/MM/yyyy").format(dataLocacao), new SimpleDateFormat("dd/MM/yyyy").format(dataDevolucao), valor);
     }
 }

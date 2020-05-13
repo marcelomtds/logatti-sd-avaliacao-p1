@@ -92,6 +92,15 @@ public class Main {
                 case 17:
                     createLocacao();
                     break;
+                case 18:
+                    updateLocacao();
+                    break;
+                case 19:
+                    listAllLocacoes();
+                    break;
+                case 20:
+                    deleteLocacao();
+                    break;
                 case 21:
                     isContinue = false;
                     System.out.println("Aplicação finalizada com sucesso.");
@@ -174,7 +183,7 @@ public class Main {
     private static void listAllModelos() {
         try {
             for (Modelo modelo : modeloPersistence.listAll()) {
-                System.out.println(String.format("Modelo = %s - Marca = %s", modelo.toString(), modelo.getMarca().toString()));
+                System.out.println(String.format("%s - Marca = %s", modelo.toString(), modelo.getMarca().toString()));
             }
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -244,7 +253,7 @@ public class Main {
     private static void listAllAutomoveis() {
         try {
             for (Automovel automovel : automovelPersistence.listAll()) {
-                System.out.println(String.format("Automóvel = %s - Modelo = %s - Marca = %s",
+                System.out.println(String.format("%s - Modelo = %s - Marca = %s",
                         automovel.toString(), automovel.getModelo().toString(), automovel.getModelo().getMarca().toString()));
             }
         } catch (RemoteException e) {
@@ -362,6 +371,47 @@ public class Main {
             locacao.setDataDevolucao(Date.valueOf(currentDate.plusDays(quantidadeDiarias)));
             locacao.setValor(automovel.getValorDiaria().multiply(BigDecimal.valueOf(quantidadeDiarias)));
             locacaoPersistence.create(locacao);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void updateLocacao() {
+        try {
+            System.out.print("Informe o ID da locação: ");
+            Locacao locacao = locacaoPersistence.findById(getLongValue());
+            System.out.print("Informe o ID do automóvel: ");
+            Automovel automovel = automovelPersistence.findById(getLongValue());
+            locacao.setAutomovel(automovel);
+            System.out.print("Informe o ID do cliente: ");
+            locacao.setCliente(clientePersistence.findById(getLongValue()));
+            LocalDate currentDate = LocalDate.now();
+            locacao.setDataLocacao(Date.valueOf(currentDate));
+            System.out.print("Informe a quantidade de diárias: ");
+            Integer quantidadeDiarias = getIntValue();
+            locacao.setDataDevolucao(Date.valueOf(currentDate.plusDays(quantidadeDiarias)));
+            locacao.setValor(automovel.getValorDiaria().multiply(BigDecimal.valueOf(quantidadeDiarias)));
+            locacaoPersistence.update(locacao);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void listAllLocacoes() {
+        try {
+            for (Locacao locacao : locacaoPersistence.listAll()) {
+                System.out.println(String.format("%s - Cliente = %s - Automóvel = %s - Modelo = %s - Marca = %s",
+                        locacao.toString(), locacao.getCliente(), locacao.getAutomovel(), locacao.getAutomovel().getModelo(), locacao.getAutomovel().getModelo().getMarca()));
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void deleteLocacao() {
+        try {
+            System.out.print("Informe o ID da locação: ");
+            locacaoPersistence.delete(getLongValue());
         } catch (RemoteException e) {
             e.printStackTrace();
         }

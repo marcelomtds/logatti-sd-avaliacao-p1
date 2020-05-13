@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1010601b-9ffa-4f48-b583-23082d4774bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b/storage_v2/_src_/database/logatti-sd-avaliacao-p1.0Hge-Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c5e36e-6026-49a0-8da8-6a55c3b3ac8b/storage_v2/_src_/database/logatti-sd-avaliacao-p1.0Hge-Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/client/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Automovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/client/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Locacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Locacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Marca.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Marca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/model/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/model/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/AutomovelPersistenceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ClientePersistenceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/LocacaoPersistenceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/MarcaPersistenceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistenceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/persistence/ModeloPersistenceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/target/classes/model/Locacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/Util/target/classes/model/Locacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/target/classes/persistence/LocacaoPersistence.class" beforeDir="false" afterPath="$PROJECT_DIR$/Util/target/classes/persistence/LocacaoPersistence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/target/classes/persistence/LocacaoPersistenceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Util/target/classes/persistence/LocacaoPersistenceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +31,10 @@
   <component name="ProjectId" id="1beKMmUELMVYkHd0r5FY4j81Vu8" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
@@ -114,11 +108,12 @@
       <workItem from="1588987077861" duration="2724000" />
       <workItem from="1588989912439" duration="10858000" />
       <workItem from="1589044884526" duration="12971000" />
+      <workItem from="1589333939521" duration="7000000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="380" y="0" width="619" height="728" key="#Main" timestamp="1589215823320">
@@ -129,50 +124,50 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="380" y="0" width="619" height="728" key="#Server/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589215798684" />
-    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1589258262013">
+    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1589338529354">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589258262013" />
+    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589338529354" />
     <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589215811553">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589215811553" />
-    <state width="818" height="466" key="DebuggerActiveHint" timestamp="1589245025777">
+    <state width="818" height="466" key="DebuggerActiveHint" timestamp="1589339362199">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="818" height="466" key="DebuggerActiveHint/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589245025777" />
-    <state width="1323" height="281" key="GridCell.Tab.0.bottom" timestamp="1589260437723">
+    <state width="818" height="466" key="DebuggerActiveHint/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589339362199" />
+    <state width="1323" height="271" key="GridCell.Tab.0.bottom" timestamp="1589342980156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.0.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
-    <state width="1323" height="281" key="GridCell.Tab.0.center" timestamp="1589260437723">
+    <state width="1323" height="271" key="GridCell.Tab.0.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980156" />
+    <state width="1323" height="271" key="GridCell.Tab.0.center" timestamp="1589342980156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.0.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
-    <state width="1323" height="281" key="GridCell.Tab.0.left" timestamp="1589260437723">
+    <state width="1323" height="271" key="GridCell.Tab.0.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980156" />
+    <state width="1323" height="271" key="GridCell.Tab.0.left" timestamp="1589342980155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.0.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
-    <state width="1323" height="281" key="GridCell.Tab.0.right" timestamp="1589260437723">
+    <state width="1323" height="271" key="GridCell.Tab.0.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980155" />
+    <state width="1323" height="271" key="GridCell.Tab.0.right" timestamp="1589342980156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.0.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437723" />
-    <state width="1323" height="281" key="GridCell.Tab.1.bottom" timestamp="1589260437499">
+    <state width="1323" height="271" key="GridCell.Tab.0.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980156" />
+    <state width="1323" height="271" key="GridCell.Tab.1.bottom" timestamp="1589342980156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.1.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437499" />
-    <state width="1323" height="281" key="GridCell.Tab.1.center" timestamp="1589260437499">
+    <state width="1323" height="271" key="GridCell.Tab.1.bottom/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980156" />
+    <state width="1323" height="271" key="GridCell.Tab.1.center" timestamp="1589342980156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.1.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437499" />
-    <state width="1323" height="281" key="GridCell.Tab.1.left" timestamp="1589260437498">
+    <state width="1323" height="271" key="GridCell.Tab.1.center/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980156" />
+    <state width="1323" height="271" key="GridCell.Tab.1.left" timestamp="1589342980156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.1.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437498" />
-    <state width="1323" height="281" key="GridCell.Tab.1.right" timestamp="1589260437499">
+    <state width="1323" height="271" key="GridCell.Tab.1.left/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980156" />
+    <state width="1323" height="271" key="GridCell.Tab.1.right" timestamp="1589342980156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="281" key="GridCell.Tab.1.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589260437499" />
+    <state width="1323" height="271" key="GridCell.Tab.1.right/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1589342980156" />
     <state x="541" y="253" width="316" height="240" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1589240427920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
